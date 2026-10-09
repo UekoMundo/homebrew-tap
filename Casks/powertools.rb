@@ -2,10 +2,12 @@ cask "powertools" do
   version "0.1.0"
   sha256 :no_check
 
-  url "https://github.com/vineelsai26/PowerTools/releases/download/v#{version}/PowerTools-#{version}-macos.zip"
+  url "https://github.com/UekoMundo/homebrew-tap/releases/download/powertools-v#{version}/PowerTools-#{version}-macos.zip"
   name "PowerTools"
   desc "Utility suite with system monitoring, backups, SSH keys, and everyday tools"
-  homepage "https://github.com/vineelsai26/PowerTools"
+  homepage "https://github.com/UekoMundo/homebrew-tap/releases"
+
+  disable! date: "2026-09-03", because: "has no verified notarized release"
 
   depends_on macos: :sonoma
 

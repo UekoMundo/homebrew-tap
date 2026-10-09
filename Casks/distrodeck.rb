@@ -2,10 +2,12 @@ cask "distrodeck" do
   version "0.1.0"
   sha256 :no_check
 
-  url "https://github.com/vineelsai26/DistroDeck/releases/download/v#{version}/DistroDeck-#{version}-macOS-arm64.zip"
+  url "https://github.com/UekoMundo/homebrew-tap/releases/download/distrodeck-v#{version}/DistroDeck-#{version}-macOS-arm64.zip"
   name "DistroDeck"
   desc "Persistent Ubuntu, Fedora, and Arch environments using Apple Container"
-  homepage "https://github.com/vineelsai26/DistroDeck"
+  homepage "https://github.com/UekoMundo/homebrew-tap/releases"
+
+  disable! date: "2026-09-03", because: "has no verified notarized release"
 
   depends_on arch: :arm64
   depends_on macos: :tahoe

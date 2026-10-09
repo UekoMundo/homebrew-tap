@@ -1,38 +1,14 @@
-# typed: strict
-# frozen_string_literal: true
-
-# Homebrew package for the Vault Sync daemon and command-line client.
+# No verified binary release yet. Updated by update-distribution-tap.mjs.
 class VaultSync < Formula
   desc "End-to-end encrypted synchronization for Markdown vaults"
-  homepage "https://github.com/vineelsai26/vault-sync"
-  version "0.1.0"
+  homepage "https://github.com/UekoMundo/homebrew-tap/releases"
+  url "https://github.com/UekoMundo/homebrew-tap.git", using: :git
+  version "0.0.0"
   license "MIT"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/vineelsai26/vault-sync/releases/download/v0.1.0/vault-sync-macos-amd64.tar.gz"
-    # Bootstrap checksum. Pin this to the first published release before installation.
-    sha256 "0000000000000000000000000000000000000000000000000000000000000000"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/vineelsai26/vault-sync/releases/download/v0.1.0/vault-sync-macos-arm64.tar.gz"
-    # Bootstrap checksum. Pin this to the first published release before installation.
-    sha256 "0000000000000000000000000000000000000000000000000000000000000000"
-  end
-
-  depends_on macos: :sonoma
+  disable! date: "2026-09-03", because: "has no verified binary release in UekoMundo/homebrew-tap"
 
   def install
-    bin.install "vault-sync"
-  end
-
-  def caveats
-    <<~EOS
-      To run continuous synchronization as a user LaunchAgent after enrollment:
-        vault-sync service install
-    EOS
-  end
-
-  test do
-    system "#{bin}/vault-sync", "--version"
+    odie "Publish a verified Kenkon release before enabling this formula."
   end
 end
